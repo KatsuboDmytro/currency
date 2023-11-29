@@ -9,9 +9,10 @@ import changerRight from "../assets/change_curr_right.svg";
 
 import { Header } from "./header/Header";
 import { Main } from "./main/Main";
-import { Input } from "./inputs/Input";
+import { Dropdown } from "./dropdown/Dropdown";
+import { Loader } from "./loader/Loader";
 
 export { 
   logo, usd, eur, exchange, switcherUp, switcherDown, changerLeft, changerRight,
-  Header, Main, Input,
+  Header, Main, Dropdown, Loader,
 }
