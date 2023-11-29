@@ -1,16 +1,22 @@
 {
   "files": {
-    "main.css": "/currency/static/css/main.f855e6bc.css",
-    "main.js": "/currency/static/js/main.0005a7aa.js",
-    "static/js/787.05520fde.chunk.js": "/currency/static/js/787.05520fde.chunk.js",
-    "static/media/logo.svg": "/currency/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/currency/static/css/main.c43950a5.css",
+    "main.js": "/currency/static/js/main.b7a34cea.js",
+    "static/media/Kharkiv-Tone.ttf": "/currency/static/media/Kharkiv-Tone.6606d31e8d8c3e9f194b.ttf",
+    "static/media/logo.svg": "/currency/static/media/logo.52fbdec0ca470fbbb6e3a5111e3bc555.svg",
+    "static/media/change_curr_right.svg": "/currency/static/media/change_curr_right.3e1d00e832734699602fb267d5ab8513.svg",
+    "static/media/change_curr_left.svg": "/currency/static/media/change_curr_left.52ee09c492bda8ab94d855b7d011bbb7.svg",
+    "static/media/exchange.svg": "/currency/static/media/exchange.8f2fc5bc62562ad3b17c787fb2eb003f.svg",
+    "static/media/eur.svg": "/currency/static/media/eur.fb5422b54d4a9445e8d027736e7e5a6b.svg",
     "index.html": "/currency/index.html",
-    "main.f855e6bc.css.map": "/currency/static/css/main.f855e6bc.css.map",
-    "main.0005a7aa.js.map": "/currency/static/js/main.0005a7aa.js.map",
-    "787.05520fde.chunk.js.map": "/currency/static/js/787.05520fde.chunk.js.map"
+    "static/media/usd.svg": "/currency/static/media/usd.b6f8c52533b1fc2908b86eabb56637e9.svg",
+    "static/media/switcher_down.svg": "/currency/static/media/switcher_down.0c2e7251e7896dfee50ceeb297179bbf.svg",
+    "static/media/switcher_up.svg": "/currency/static/media/switcher_up.23b0a16e104f5867074e0f91e17b1e15.svg",
+    "main.c43950a5.css.map": "/currency/static/css/main.c43950a5.css.map",
+    "main.b7a34cea.js.map": "/currency/static/js/main.b7a34cea.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.0005a7aa.js"
+    "static/css/main.c43950a5.css",
+    "static/js/main.b7a34cea.js"
   ]
 }
