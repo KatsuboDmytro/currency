@@ -1,0 +1,20 @@
+.main__bg {
+  position: absolute;
+  width: 640px;
+  left: -320px;
+  top: 50px;
+  opacity: .3;
+}
+
+.main > p {
+  font-size: 52px;
+  text-align: right;
+  margin: 150px 0;
+}
+
+.main > form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+}

@@ -1,0 +1,56 @@
+.curr {
+  display: flex;
+  gap: 30px;
+}
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.search-input {
+  width: 89%;
+  padding: 8px;
+  margin-top: 5px;
+  font-family: 'Kharkiv-Tone';
+  font-size: 18px;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  width: 200px;
+  background-color: #fff;
+}
+
+.dropdown-list option {
+  padding: 8px;
+}
+.dropdown-list option:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.custom__option {
+  font-family: 'Kharkiv-Tone';
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.curr__input {
+  font-family: 'Kharkiv-Tone';
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: #fff;
+}

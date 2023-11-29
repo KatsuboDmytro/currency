@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.header__currencies {
+  display: flex;
+  gap: 40px;
+}
+
+.header__currencies > li {
+  font-family: 'Kharkiv-Tone';
+  font-size: 18px;
+}

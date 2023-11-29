@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Kharkiv-Tone';
+  src: 
+    local('Kharkiv-Tone'),
+    url('./Kharkiv-Tone.ttf'), 
+    format('ttf'),
+}
