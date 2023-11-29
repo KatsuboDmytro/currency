@@ -12,7 +12,7 @@ export const Main = ({ currData }) => {
   const [isSwitchTo, setIsSwitchTo] = useState(false);
   const [isSwitchFrom, setIsSwitchFrom] = useState(false);
   const [findCurrName, setFindCurrName] = useState('');
-  const [inputValueTo, setInputValueTo] = useState(1);
+  const [inputValueTo, setInputValueTo] = useState(0.027);
   const [inputValueFrom, setInputValueFrom] = useState(1);
   const [exchangeRate, setExchangeRate] = useState(null);
 
