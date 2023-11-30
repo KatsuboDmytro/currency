@@ -8,18 +8,18 @@ export const Select = ({ listPosition, currData, value, currencyChooseTo, curren
 
   const toggleSwitchStatus = (e) => {
     e.preventDefault();
-    setSwitchStatus(switchStatus === 'wrap' ? 'unwrap' : 'wrap');
+    setSwitchStatus((prevStatus) => (prevStatus === 'wrap' ? 'unwrap' : 'wrap'));
   };
 
   const handlerInput = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     setFindCurrName(event.target.value);
   };
 
   return (
     <>
       <div className="custom-dropdown">
-        <button className="custom__option" onClick={(e) => toggleSwitchStatus(e, 'unwrap')}>
+        <button type="button" className="custom__option" onClick={toggleSwitchStatus}>
           <span>{value}</span>
           {switchStatus === 'wrap' ? <SwitcherUp /> : <SwitcherDown />}
         </button>

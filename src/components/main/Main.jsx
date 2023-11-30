@@ -27,6 +27,12 @@ export const Main = ({ currData }) => {
     setInputValueTo(event.target.value * exchangeRate);
   };
 
+  const handlerValueTo = (event) => {
+    event.preventDefault();
+    setInputValueFrom(event.target.value * exchangeRate);
+    setInputValueTo(event.target.value );
+  };
+
   const toggleChanger = () => {
     setFirstCurr(secondCurr);
     setSecondCurr(firstCurr);
@@ -74,7 +80,7 @@ export const Main = ({ currData }) => {
           type="number"
           id="input-amount"
           value={inputValueTo}
-          onChange={handlerValueFrom}
+          onChange={handlerValueTo}
         />
         <Select 
           listPosition={'right'}

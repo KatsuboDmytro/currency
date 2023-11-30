@@ -2,18 +2,19 @@ import './dropdown.css';
 
 export const Dropdown = ({ listPosition, isOpen, currData, currencyChooseFrom, findCurrName, handlerInput, currencyChooseTo, toggleSwitchStatus }) => {
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     if (listPosition === 'left') {
-      currencyChooseFrom();
+      currencyChooseFrom(e);
     } else {
-      currencyChooseTo();
+      currencyChooseTo(e);
     }
-    toggleSwitchStatus('wrap');
+    toggleSwitchStatus(e);
   };
 
   return (
     <div className="dropdown-list" style={{ display: isOpen === 'wrap' ? 'block' : 'none' }}>
-      <input type="text" className="search-input" placeholder="Search..." value={findCurrName} onChange={handlerInput} />
+      <input type="text" className="search-input" placeholder="Search..." value={findCurrName} onChange={e => handlerInput(e)} />
       {currData
         .filter((curr) =>
           Object.values(curr).some((value) =>
@@ -21,7 +22,7 @@ export const Dropdown = ({ listPosition, isOpen, currData, currencyChooseFrom, f
           )
         )
         .map((money) => (
-          <option key={money.cc} value={money.cc} onClick={handleClick}>
+          <option key={money.cc} value={money.cc} onClick={e => handleClick(e)}>
             {money.cc}
           </option>
         ))}
