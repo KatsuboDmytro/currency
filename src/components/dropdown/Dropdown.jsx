@@ -1,11 +1,9 @@
-import { useMainContext } from '../../hooks/useMainContext'
 import './dropdown.css'
 
-export const Dropdown = ({ what, handlerInput, currencyChooseFrom, currencyChooseTo }) => {
-  const { currData, isSwitchTo, isSwitchFrom, findCurrName,  } = useMainContext();
+export const Dropdown = ({ listPosition, what, currData, currencyChooseFrom, findCurrName, handlerInput, currencyChooseTo }) => {
     
   return (
-    <div className="dropdown-list" style={{ display: (what === 'to' ? isSwitchTo : isSwitchFrom) ? 'block' : 'none' }}>
+    <div className="dropdown-list" style={{ display: what === 'wrap' ? 'block' : 'none' }}>
       <input type="text" className="search-input" placeholder="Search..." value={findCurrName} onChange={handlerInput} />
       {currData
       .filter((curr) =>
@@ -14,7 +12,15 @@ export const Dropdown = ({ what, handlerInput, currencyChooseFrom, currencyChoos
         )
       )
       .map((money) => {
-        return <option key={money.cc} value={money.cc} onClick={what === 'to' ? currencyChooseTo : currencyChooseFrom}>{money.cc}</option>
+        return (
+          <option
+            key={money.cc}
+            value={money.cc}
+            onClick={listPosition === 'left' ? currencyChooseFrom : currencyChooseTo}
+          >
+            {money.cc}
+          </option>
+        );
       })}
     </div>
   )

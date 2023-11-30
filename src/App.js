@@ -1,33 +1,21 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { Header, Loader, Main } from './components/index'
+import useFetchData from './api/useFetchData';
+import { useMemo } from 'react';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [currency, setCurrency] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setIsLoading(true);
-        const response = await axios.get('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json');
-        setCurrency(response.data);
-        setIsLoading(false);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setIsLoading(false);
-      }
-    };
+  const {isLoading, currency} = useFetchData(false);
 
-    fetchData();
-  }, []);
-  
+  const currData = useMemo(() => 
+    currency.filter((curr) => curr.cc === 'USD' || curr.cc === 'EUR')
+  , [currency]);
+
   return (
     <>
     {
       isLoading ?
       <Loader /> :
       <>
-        <Header currData={currency.filter((curr) => curr.cc === 'USD' || curr.cc === 'EUR')} />
+        <Header currData={currData} />
         <Main currData={currency} />
       </>
     }
