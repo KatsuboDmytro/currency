@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const useFetchData = () => {
+const useFetchCurrency = ({ url }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [currency, setCurrency] = useState([]);
 
@@ -9,19 +9,19 @@ const useFetchData = () => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json');
+        const response = await axios.get(url);
         setCurrency(response.data);
         setIsLoading(false);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        alert('Error fetching data:', error);
         setIsLoading(false);
       }
     };
 
     fetchData();
-  }, []);
+  }, [url]);
 
   return { isLoading, currency };
 };
 
-export default useFetchData;
+export default useFetchCurrency;

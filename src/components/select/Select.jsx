@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Dropdown } from '../dropdown/Dropdown';
-import { switcherDown, switcherUp } from '../index';
+import { SwitcherDown, SwitcherUp } from '../../assets/assets';
+import { Dropdown } from '../index';
 
-export const Select = ({ listPosition, currData, value, rate, handlerValueFrom, currencyChooseTo, currencyChooseFrom }) => {
+export const Select = ({ listPosition, currData, value, currencyChooseTo, currencyChooseFrom }) => {
   const [findCurrName, setFindCurrName] = useState('');
   const [switchStatus, setSwitchStatus] = useState('wrap');
 
@@ -12,28 +12,21 @@ export const Select = ({ listPosition, currData, value, rate, handlerValueFrom, 
   };
 
   const handlerInput = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     setFindCurrName(event.target.value);
   };
 
   return (
     <>
-      <input
-        className='curr__input'
-        type="number"
-        id="input-amount"
-        value={rate}
-        onChange={handlerValueFrom}
-      />
       <div className="custom-dropdown">
         <button className="custom__option" onClick={(e) => toggleSwitchStatus(e, 'unwrap')}>
           <span>{value}</span>
-          <img src={switchStatus === 'wrap' ? switcherUp : switcherDown} alt="switcher" />
+          {switchStatus === 'wrap' ? <SwitcherUp /> : <SwitcherDown />}
         </button>
 
         <Dropdown
           listPosition={listPosition}
-          what={switchStatus === 'unwrap' ? 'wrap' : 'unwrap'}
+          isOpen={switchStatus === 'unwrap' ? 'wrap' : 'unwrap'}
           currData={currData}
           handlerInput={handlerInput}
           findCurrName={findCurrName}

@@ -1,9 +1,7 @@
-import { createContext, useEffect, useState } from 'react';
-import { changerLeft, changerRight, exchange } from '../index';
+import { useEffect, useState } from 'react';
+import { ChangerLeft, ChangerRight, Exchange } from '../../assets/assets';
 import { Select } from '../select/Select';
 import './main.css';
-
-export const MainContext = createContext([]);
 
 export const Main = ({ currData }) => {
   const [isChanged, setIsChanged] = useState(false);
@@ -38,7 +36,7 @@ export const Main = ({ currData }) => {
   useEffect(() => {
     const calculateExchangeRate = () => {
       const firstRate = firstCurr === 'UAH' ? 1 : currData.find((curr) => curr.cc === firstCurr)?.rate;
-      const secondRate = currData.find((curr) => curr.cc === secondCurr)?.rate;
+      const secondRate = secondCurr === 'UAH' ? 36.6/firstRate : currData.find((curr) => curr.cc === secondCurr)?.rate;
 
       if (firstRate && secondRate) {
         const rate = firstRate / secondRate;
@@ -50,30 +48,38 @@ export const Main = ({ currData }) => {
 
   return (
     <main className='main container'>
-      <img className='main__bg' src={exchange} alt="exchange bg" />
+      <Exchange />
       <p>Конвертуйте валюту згідно стандартам Національного банку України</p>
 
       <form action="">
+        <input
+          className='curr__input'
+          type="number"
+          id="input-amount"
+          value={inputValueFrom}
+          onChange={handlerValueFrom}
+        />
         <Select 
           listPosition={'left'}
           currData={currData} 
           value={firstCurr}
-          rate={inputValueFrom}
-          handlerValueFrom={handlerValueFrom}
-          options={[]} 
           currencyChooseTo={currencyChooseTo}
           currencyChooseFrom={currencyChooseFrom} 
         />
 
-        <img onClick={toggleChanger} src={isChanged ? changerRight : changerLeft} alt="changer" />
+        {isChanged ? <div onClick={toggleChanger}><ChangerRight /></div> : <div onClick={toggleChanger}><ChangerLeft /></div>}
 
+        <input
+          className='curr__input'
+          type="number"
+          id="input-amount"
+          value={inputValueTo}
+          onChange={handlerValueFrom}
+        />
         <Select 
           listPosition={'right'}
           currData={currData} 
           value={secondCurr}
-          rate={inputValueTo}
-          handlerValueFrom={handlerValueFrom}
-          options={[]} 
           currencyChooseTo={currencyChooseTo}
           currencyChooseFrom={currencyChooseFrom} 
         />
