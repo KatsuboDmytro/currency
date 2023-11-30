@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/currency/static/css/main.c43950a5.css",
-    "main.js": "/currency/static/js/main.46b23298.js",
+    "main.js": "/currency/static/js/main.d5a7ba49.js",
     "static/media/Kharkiv-Tone.ttf": "/currency/static/media/Kharkiv-Tone.6606d31e8d8c3e9f194b.ttf",
     "static/media/logo.svg": "/currency/static/media/logo.52fbdec0ca470fbbb6e3a5111e3bc555.svg",
     "static/media/change_curr_right.svg": "/currency/static/media/change_curr_right.3e1d00e832734699602fb267d5ab8513.svg",
@@ -13,10 +13,10 @@
     "static/media/switcher_down.svg": "/currency/static/media/switcher_down.0c2e7251e7896dfee50ceeb297179bbf.svg",
     "static/media/switcher_up.svg": "/currency/static/media/switcher_up.23b0a16e104f5867074e0f91e17b1e15.svg",
     "main.c43950a5.css.map": "/currency/static/css/main.c43950a5.css.map",
-    "main.46b23298.js.map": "/currency/static/js/main.46b23298.js.map"
+    "main.d5a7ba49.js.map": "/currency/static/js/main.d5a7ba49.js.map"
   },
   "entrypoints": [
     "static/css/main.c43950a5.css",
-    "static/js/main.46b23298.js"
+    "static/js/main.d5a7ba49.js"
   ]
 }
